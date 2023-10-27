@@ -3,7 +3,7 @@
     <div class="grid grid-cols-12 gap-y-5 gap-5 pt-9 pb-5 border-y border-[#eee] [&>*:nth-child(2)]:border-b [&>*:nth-child(2)]:md:border-0 [&>*:nth-child(2)]:pb-5 [&>*:nth-child(2)]:md:pb-0">
       <div class="col-span-6 md:col-span-3 pb-5 md:pb-0 border-b md:border-0 border-[#EEEEEE]">
         <router-link to="/">
-          <img src="bemalol-logo.svg" alt="adsf">
+          <img src="../../../public/bemalol-logo.svg" alt="adsf">
         </router-link>
         <div class="mt-8 flex flex-col lg:flex-row gap-2 lg:gap-0 px-2 sm:px-4 lg:px-0 w-fit lg:w-full">
           <button
