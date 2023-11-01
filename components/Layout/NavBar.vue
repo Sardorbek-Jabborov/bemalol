@@ -15,9 +15,10 @@
           <li>
             <IconsSearch class="h-4 w-4 text-[#999999] block min-[450px]:hidden"/>
           </li>
-          <li class="flex gap-2 items-center hover:cursor-pointer group">
+          <li class="flex gap-2 items-center hover:cursor-pointer group relative" @click="openDrop">
             <IconsCopy class="h-[18px] w-[18px] text-[#999999] group-hover:text-[#CC3256] transition-300"/>
             <p class="text-sm text-[#202020] group-hover:text-[#CC3256] transition-300 hidden md:block">Категории</p>
+            <DropdownCategory :class="{'hidden': categoryDrop}" class="absolute top-full left-0 mt-1.5" />
           </li>
           <li class="flex gap-2 items-center hover:cursor-pointer group">
             <IconsShop class="h-[18px] w-[18px] text-[#999999] group-hover:text-[#CC3256] transition-300"/>
@@ -27,7 +28,7 @@
             <IconsStar class="h-[18px] w-[18px] text-[#999999] group-hover:text-[#CC3256] transition-300"/>
             <p class="text-sm text-[#202020] group-hover:text-[#CC3256] transition-300 hidden md:block">0</p>
           </li>
-          <li class="hidden min-[990px]:flex gap-2 items-center hover:cursor-pointer group">
+          <li class="hidden min-[990px]:flex gap-2 items-center hover:cursor-pointer group" @click="popUp">
             <IconsMessage class="h-[18px] w-[18px] text-[#999999] group-hover:text-[#CC3256] transition-300"/>
             <p class="text-sm text-[#202020] group-hover:text-[#CC3256] transition-300 hidden md:block">Сообщения</p>
           </li>
@@ -42,4 +43,20 @@
   </div>
 </template>
 <script setup lang="ts">
+import {defineEmits} from 'vue'
+
+const categoryDrop = ref(false)
+const openDrop = () => {
+  categoryDrop.value = !categoryDrop.value
+}
+
+
+const {$eventBus} = useNuxtApp()
+defineEmits(["popUp"])
+
+const popUp = () => {
+  console.log($eventBus)
+  $eventBus?.emit('popUp')
+  console.log('Emitted')
+}
 </script>
