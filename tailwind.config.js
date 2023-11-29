@@ -16,11 +16,24 @@ module.exports = {
         },
         extend: {
             colors: {
-                red: '#FF0000',
+                black: {
+                    main: "#202020",
+                },
+                red: {
+                    light: "#CC3256",
+                    main: "#db3727",
+                },
                 green: {
                     main: '#55BB00',
                     secondary: '#6c1',
                 },
+                blue: {
+                    main: '#347ED1',
+                    100: '#eef5fc',
+                },
+                grey: {
+                    300: '#F3F3F3',
+                }
             },
         },
         fontSize: {

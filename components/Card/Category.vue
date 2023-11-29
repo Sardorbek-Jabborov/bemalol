@@ -1,10 +1,10 @@
 <template>
-  <router-link to="/">
+  <router-link :to="item.url">
     <div
-        class="group py-1.5 px-3 flex justify-between items-center bg-white w-full rounded hover:shadow-[0_5px_20px_0_rgba(0,0,0,0.1)] transition-300">
+        class="group py-1.5 px-3 flex justify-between items-center bg-white w-full rounded hover:shadow-[0_5px_20px_0_rgba(0,0,0,0.1)] transition-200">
       <div class="flex gap-4 items-center overflow-hidden whitespace-nowrap">
-        <component :is="item?.component"/>
-        <p class="truncate pr-3 group-hover:text-[#CC3256] text-sm transition-300">{{ item?.title }}</p>
+        <component :is="item.icon"/>
+        <p class="truncate pr-3 group-hover:text-red-light text-sm transition-200">{{ item?.title }}</p>
       </div>
       <span class="text-[#aaa] text-sm">{{ item?.count }}</span>
     </div>
@@ -15,7 +15,7 @@
 defineProps({
   item: {
     type: Object,
-    component: {
+    icon: {
       required: true,
     },
     title: {
@@ -25,6 +25,9 @@ defineProps({
     count: {
       required: true,
       type: Number
+    },
+    url: {
+      type: String,
     }
   }
 })

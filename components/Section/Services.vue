@@ -7,7 +7,7 @@
         <p class="mt-4 md:mt-10 mb-4 md:mb-8 text-lg md:text-xl font-light max-w-[610px]">
           Нужно только решить, насколько заметным вы хотите сделать объявление и как быстро желаете заключить сделку!
         </p>
-        <p class="text-[#202020] max-w-[350px]">
+        <p class="text-black-main max-w-[350px]">
           Наши услуги помогут быстрее продать ваш товар или услугу
         </p>
         <div class="mt-4 flex gap-2 items-center">

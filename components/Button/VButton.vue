@@ -1,6 +1,6 @@
 <template>
   <button
-      class="py-1.5 px-4 rounded-3xl relative text-white text-sm border border-transparent transition-300 active:shadow-[inset_0_3px_5px_rgba(0,0,0,.125)]"
+      class="py-1.5 px-4 rounded-3xl relative text-white text-sm border border-transparent transition-200 active:shadow-[inset_0_3px_5px_rgba(0,0,0,.125)] select-none"
       :class="[btnStyle, {'uppercase': isUppercase, 'shadow-[0_6px_4px_-4px_rgba(0,0,0,0.3)]': shadow}]">
     {{ label }}
   </button>

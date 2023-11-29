@@ -16,9 +16,17 @@ export default defineNuxtConfig({
             },
         ],
     ],
-    plugins: [
-        'plugins/eventBus',
-    ],
+    app: {
+        head: {
+            link: [
+                {rel: "icon", type: "image/png", href: "/favicon.svg"}
+            ]
+        }
+    },
+    devServer: {
+        host: '0.0.0.0',
+        port: 3000
+    },
     runtimeConfig: {
         public: {
             baseURL: "localhost",

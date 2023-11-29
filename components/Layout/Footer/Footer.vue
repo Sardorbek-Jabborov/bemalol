@@ -7,11 +7,11 @@
         </router-link>
         <div class="mt-8 flex flex-col lg:flex-row gap-2 lg:gap-0 px-2 sm:px-4 lg:px-0 w-fit lg:w-full">
           <button
-              class="w-full lg:w-fit py-1 px-4 text-sm border border-[#ccc] bg-[#fff] text-[#333] hover:bg-[#eef5fc] hover:border-[#91c0f5] transition-300 relative hover:z-50">
+              class="w-full lg:w-fit py-1 px-4 text-sm border border-[#ccc] bg-[#fff] text-[#333] hover:bg-[#eef5fc] hover:border-[#91c0f5] transition-200 relative hover:z-50 active:shadow-[inset_0_3px_5px_rgba(0,0,0,.125)]">
             Лента RSS
           </button>
           <button
-              class="w-full lg:w-fit py-1 px-4 text-sm border border-[#ccc] bg-[#fff] text-[#333] hover:bg-[#eef5fc] hover:border-[#91c0f5] transition-300 relative lg:-ml-[1px]">
+              class="w-full lg:w-fit py-1 px-4 text-sm border border-[#ccc] bg-[#fff] text-[#333] hover:bg-[#eef5fc] hover:border-[#91c0f5] transition-200 relative lg:-ml-[1px] active:shadow-[inset_0_3px_5px_rgba(0,0,0,.125)]">
             Карта сайта
           </button>
         </div>
@@ -21,13 +21,13 @@
           {{ item.title }}
         </li>
         <li v-for="list in item.list" :key="list" class="mt-1.5 md:mt-3 text-sm">
-          <router-link :to="list?.link" class="hover:text-[#db3727] transition-300">{{ list?.text }}</router-link>
+          <router-link :to="list?.link" class="hover:text-red-main transition-200">{{ list?.text }}</router-link>
         </li>
       </ul>
     </div>
     <div class="md:pt-8 py-3 md:py-0 md:border-b border-[#eee] flex justify-between gap-10 md:mb-5">
       <div class="max-w-[220px] hidden md:block">
-        <h3 class="text-[#202020] text-15 font-medium">Пользуйтесь сайтом с мобильного телефона</h3>
+        <h3 class="text-black-main text-15 font-medium">Пользуйтесь сайтом с мобильного телефона</h3>
         <p class="mt-1.5 text-[#777] text-13">Удобный сайт, качественный поиск, быстрая подача объявлений.</p>
       </div>
       <img src="../../../assets/images/phone.png" alt="phone_img" class="hidden md:block">

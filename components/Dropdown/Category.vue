@@ -1,10 +1,22 @@
 <template>
-  <div class="w-[240px]">
+  <div class="w-[240px] z-50">
     <CommonDropdown>
-      <ul class="max-h-[336px] overflow-y-scroll">
-        <li v-for="item in data" :key="item" class="flex gap-3 items-center py-2 hover:bg-gray-200 px-2 ">
-          <component :is="item.component" class="w-7 h-7"/>
-          <p class="text-15">{{ item.title }}</p>
+      <ul class="max-h-[336px] py-1.5 overflow-y-auto overflow-x-visible">
+        <li v-for="category in categories" :key="category" class="group relative">
+          <router-link :to="category.url" class="flex gap-3 items-center py-2 hover:bg-gray-200 px-2">
+            <component :is="category.icon" class="w-7 h-7"/>
+            <p class="text-15">{{ category.title }}</p>
+          </router-link>
+          <!--          <div class="relative overflow-y-scroll">-->
+          <!--            <CommonDropdown class="hidden group-hover:block absolute top-full right-2 z-50 overflow-visible">-->
+          <!--              <li v-for="subcategory in category?.subcategories" :key="subcategory">-->
+          <!--                <router-link to="/" class="flex gap-3 items-center py-2 hover:bg-gray-200 px-2">-->
+          <!--                  <p class="text-15">{{ subcategory?.title }}</p>-->
+          <!--                  <p>{{ subcategory?.count }}</p>-->
+          <!--                </router-link>-->
+          <!--              </li>-->
+          <!--            </CommonDropdown>-->
+          <!--          </div>-->
         </li>
       </ul>
     </CommonDropdown>
@@ -12,99 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import {
-  IconsBeauty,
-  IconsBuilding,
-  IconsCar,
-  IconsCat, IconsCoins, IconsFree, IconsFruits,
-  IconsGarden, IconsGift, IconsHobby,
-  IconsHome,
-  IconsKids,
-  IconsPC, IconsServices,
-  IconsTshirt,
-  IconsWork
-} from "#components";
+import {categories} from "~/data/categories";
 
-const data = [
-  {
-    component: IconsCar,
-    title: "Автотранспорт",
-    count: 3,
-  },
-  {
-    component: IconsHome,
-    title: "Недвижимость",
-    count: 0,
-  },
-  {
-    component: IconsWork,
-    title: "Работа",
-    count: 1,
-  },
-  {
-    component: IconsBuilding,
-    title: "Строительство, ремонт",
-    count: 0,
-  },
-  {
-    component: IconsGarden,
-    title: "Дом и сад",
-    count: 2,
-  },
-  {
-    component: IconsKids,
-    title: "Детский мир",
-    count: 0,
-  },
-  {
-    component: IconsPC,
-    title: "Электроника и бытовая техника",
-    count: 6,
-  },
-  {
-    component: IconsTshirt,
-    title: "Одежда, обувь, аксессуары",
-    count: 0,
-  },
-  {
-    component: IconsCat,
-    title: "Животные и растения",
-    count: 3,
-  },
-  {
-    component: IconsBeauty,
-    title: "Красота, здоровье",
-    count: 0,
-  },
-  {
-    component: IconsGift,
-    title: "Подарки, сувениры",
-    count: 0,
-  },
-  {
-    component: IconsHobby,
-    title: " Хобби, отдых и спорт",
-    count: 4,
-  },
-  {
-    component: IconsFruits,
-    title: " Продукты питания",
-    count: 6,
-  },
-  {
-    component: IconsCoins,
-    title: " Бизнес",
-    count: 9,
-  },
-  {
-    component: IconsServices,
-    title: " Услуги",
-    count: 3,
-  },
-  {
-    component: IconsFree,
-    title: " Отдам даром, обмен",
-    count: 1,
-  }
-]
 </script>
