@@ -19,7 +19,8 @@
       </div>
     </div>
     <div class="px-3 py-4 bg-white">
-      <div class="flex justify-between items-center">
+      <div
+          class="flex max-[500px]:flex-col max-[500px]:items-start max-[500px]:gap-2 flex-row justify-between items-center">
         <div class="w-fit">
           <button v-for="(item, idx) in btnData" :key="idx"
                   @click="toggleTab(item)"
@@ -31,9 +32,7 @@
             <span class="text-13 text-[#777777]" :class="{'!text-[#A6A6A6]': item.isActive}">({{ item.count }})</span>
           </button>
         </div>
-        <div>
-          <CommonSelect />
-        </div>
+        <CommonSelect/>
       </div>
       <SectionNoData class="mt-5"/>
     </div>

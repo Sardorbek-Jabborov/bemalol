@@ -3,7 +3,7 @@
     <CommonDropdown>
       <ul class="flex flex-col items-center py-3.5 px-3">
         <li class="w-full text-center text-sm pb-2">
-          <router-link to="">
+          <router-link to="" class="hover:text-red-light transition-200">
             Посетить магазины
           </router-link>
         </li>

@@ -12,7 +12,7 @@
         Перейдите на страницу объявления, чтобы написать продавцу. Не забудьте авторизоваться.
       </p>
       <div class="mx-auto">
-        <ButtonBlue label="Войти"/>
+        <ButtonSecondary label="Войти" variant="blue" class="w-[170px]"/>
       </div>
     </div>
   </div>

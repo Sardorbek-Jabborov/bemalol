@@ -9,7 +9,9 @@
           <button class="flex items-center gap-2 group" @click="showModal">
             <IconsNavigation class="text-[#999999] md:w-5 w-8 md:h-5 h-8 group-hover:text-red-main transition-200"/>
             <span
-                class="text-black-main text-sm group-hover:text-red-main transition-200 hidden md:block">{{ regionStore.currentRegion }}</span>
+                class="text-black-main text-sm group-hover:text-red-main transition-200 hidden md:block">{{
+                regionStore.currentRegion
+              }}</span>
           </button>
           <router-link to="/" class="">
             <ButtonVButton label="Подать oбъявление" class="hidden min-[450px]:block"/>
@@ -36,7 +38,6 @@
 import {ref} from "vue"
 
 import {useRegionStore} from "~/store/region";
-import {regions} from "../../../data/regions";
 
 const regionStore = useRegionStore()
 const isOpen = ref(false)

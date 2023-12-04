@@ -2,7 +2,7 @@
   <section class="bg-grey-300 py-3">
     <div class="container bg-white p-3">
       <img src="@/assets/images/user.png" alt="user-image" class="mx-auto mt-2.5">
-      <form class="w-[338px] mx-auto" @submit.prevent>
+      <form class="w-[300px] sm:w-[338px] mx-auto" @submit.prevent>
         <p class="text-center mt-3 mb-5 text-xl">Вход в личный кабинет</p>
         <input type="email"
                class="bg-white w-full px-3 py-1.5 text-sm rounded-[20px] border border-[#ccc] focus:border-[#67a1e3] focus:shadow-[0_0_0px_3px_#e7edf5] transition-200 outline-0 placeholder-[#777777]"
@@ -22,27 +22,27 @@
         <ButtonVButton label="Войти" variant="secondary" class="block min-w-[170px] mt-4 mx-auto"/>
         <p class="text-center mt-8 text-13 text-[#777777] hover:cursor-default">или войти через соцсеть</p>
         <ul class="flex justify-center mt-2 gap-3 pb-6 border-b border-[#EEEEEE]">
-          <li>
+          <li class="hover:opacity-70 transition-200">
             <router-link to="https://www.youtube.com/">
               <IconsYoutube/>
             </router-link>
           </li>
-          <li>
+          <li class="hover:opacity-70 transition-200">
             <router-link to="/">
               <IconsGoogle/>
             </router-link>
           </li>
-          <li>
+          <li class="hover:opacity-70 transition-200">
             <router-link to="/">
               <IconsVk/>
             </router-link>
           </li>
-          <li>
+          <li class="hover:opacity-70 transition-200">
             <router-link to="/">
               <IconsOk/>
             </router-link>
           </li>
-          <li>
+          <li class="hover:opacity-70 transition-200">
             <router-link to="/">
               <IconsFacebook/>
             </router-link>

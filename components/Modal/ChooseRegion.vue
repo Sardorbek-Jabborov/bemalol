@@ -1,6 +1,6 @@
 <template>
   <div
-      class="max-h-[550px] overflow-y-scroll w-[550px] py-6 mx-auto bg-[url('/assets/images/bg_region.png')] bg-cover p-4 absolute top-10 rounded-sm shadow-[0_3px_9px_rgba(0,0,0,.5)]">
+      class="max-h-[550px] w-[550px] py-6 mx-auto bg-[url('/assets/images/bg_region.png')] bg-cover p-4 absolute top-10 rounded-sm shadow-[0_3px_9px_rgba(0,0,0,.5)]">
     <p class="text-center text-lg">Выбор региона</p>
     <IconsClose
         class="absolute right-4 top-4 w-3 h-3 hover:cursor-pointer text-[#AAAAAA] hover:text-red-main transition-200"
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import {ref, watch} from "vue"
+import {onBeforeUnmount,ref, watch} from "vue"
 
 import {regions} from "~/data/regions";
 import {useRegionStore} from "~/store/region";

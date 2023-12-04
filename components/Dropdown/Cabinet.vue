@@ -8,7 +8,7 @@
           </router-link>
         </li>
         <li class="w-full text-center text-sm pt-2">
-          <router-link to="/register">
+          <router-link to="/register" class="hover:text-red-light transition-200">
             Регистрация
           </router-link>
         </li>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[`#F3F3F3`]">
+  <div class="bg-[#F3F3F3]">
     <div class="container py-3">
       <SectionCategoriesSub class=""/>
       <SectionProducts class="mt-3"/>

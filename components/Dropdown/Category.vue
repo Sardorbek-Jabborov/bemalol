@@ -27,3 +27,25 @@
 import {categories} from "~/data/categories";
 
 </script>
+<style scoped>
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #347ED1 #e2e2e2;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e2e2e2;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #347ED1;
+  border-radius: 4px;
+}
+</style>

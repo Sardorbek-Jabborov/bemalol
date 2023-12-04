@@ -10,13 +10,13 @@
           <IconsSearch class="h-4 w-4 text-[#999999]"/>
         </button>
       </div>
-      <nav class="min-[500px]:w-auto w-full">
-        <ul class="h-full flex justify-center gap-10 items-center select-none">
+      <nav class="min-[500px]:w-auto w-full relative">
+        <ul class="h-full flex justify-center gap-10 items-center select-none relative">
           <li>
             <IconsSearch class="h-4 w-4 text-[#999999] block min-[450px]:hidden"/>
           </li>
 
-          <li class="relative" @click="toggleDropdown('category')">
+          <li class="relative" @click="toggleDropdown('category')" tabindex="0" data-dropdown="0">
             <div class="flex gap-2 items-center group hover:cursor-pointer">
               <IconsCopy
                   class="h-[18px] w-[18px] text-[#999999] group-hover:text-red-light transition-200"/>
@@ -24,11 +24,10 @@
                 Категории</p>
             </div>
             <Transition name="dropdown">
-              <DropdownCategory :class="[dropdowns.category ? 'block' : 'hidden']"
-                                class="absolute top-full left-0 mt-1.5"/>
+              <DropdownCategory :class="[dropdowns.category ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0 -z-10']"
+                                class="absolute top-full left-0 mt-1.5 transition-200"/>
             </Transition>
           </li>
-
           <li class="relative" @click="toggleDropdown('shop')">
             <div class="flex gap-2 items-center group hover:cursor-pointer">
               <IconsShop
@@ -37,7 +36,8 @@
                 Магазины</p>
             </div>
             <Transition name="dropdown">
-              <DropdownShop :class="{'hidden': !dropdowns.shop}" class="absolute top-full left-0 mt-1.5"/>
+              <DropdownShop :class="{'hidden opacity-0': !dropdowns.shop}"
+                            class="absolute top-full left-0 mt-1.5 opacity-100"/>
             </Transition>
           </li>
 
@@ -48,7 +48,7 @@
             </router-link>
           </li>
 
-          <li class="hidden min-[990px]:flex gap-2 items-center hover:cursor-pointer group" @click="">
+          <li class="hidden min-[990px]:flex gap-2 items-center hover:cursor-pointer group" @click="switchMessages">
             <IconsMessage class="h-[18px] w-[18px] text-[#999999] group-hover:text-red-light transition-200"/>
             <p class="text-sm text-black-main group-hover:text-red-light transition-200 hidden md:block">Сообщения</p>
           </li>
@@ -66,11 +66,13 @@
         </ul>
       </nav>
     </div>
+    <CommonMessages @toggle="switchMessages" class="duration-300" :class="messages ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"/>
   </div>
 </template>
 <script setup lang="ts">
 import {ref} from 'vue'
 
+const messages = ref(false)
 const dropdowns = ref({
   category: false,
   shop: false,
@@ -86,9 +88,15 @@ const toggleDropdown = (dropdown: string) => {
   dropdowns.value[dropdown] = !dropdowns.value[dropdown];
 };
 
+
+const switchMessages = () => {
+  console.log("received")
+  messages.value = !messages.value
+}
+
 </script>
 
-<style>
+<style scoped>
 .dropdown-enter-active {
   transition: all 0.2s ease;
 }

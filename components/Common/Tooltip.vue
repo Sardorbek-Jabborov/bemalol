@@ -21,11 +21,12 @@
   </div>
 </template>
 <script setup lang="ts">
-interface Props {
-  withTrigger?: boolean
-  show?: boolean
-  toBottom: boolean
-  tooltipStyles?: string
-}
-defineProps<Props>()
+
+defineProps({
+  withTrigger: Boolean,
+  show: String,
+  toBottom: Boolean,
+  tooltipStyles: String
+
+})
 </script>

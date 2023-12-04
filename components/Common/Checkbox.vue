@@ -1,7 +1,7 @@
 <template>
   <div>
-    <label class="checkbox text-sm" for="red">
-      <input type="checkbox" name="color" value="red" id="red" v-model="checked" @input="emit('checked')">
+    <label class="checkbox text-sm">
+      <input type="checkbox" v-model="checked" @input="emit('checked')">
       <span class="checkmark"></span>
       <span class="ml-1">{{ label }}</span>
     </label>
